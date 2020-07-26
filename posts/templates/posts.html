@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Najnowsze posty</h1>
+
+    <div class="input-group col-md-6 mb-3">
+     <input ng-model="postBody" type="text" class="form-control" name="postBody">
+     <button ng-click='addPost()' class="btn btn-primary ml-2">Dodaj post</button>
+     
+    </div>
+    <div class="alert alert-warning col-sm-3" role="alert" ng-if="isLogged">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        You need log in to add post.
+      </div>
+
+
+<ul class="list-group">
+    <li ng-repeat="post in posts" class="list-group-item">
+        <strong>@ {{ post.username }}</strong>
+        <span>{{ post.body }}</span>
+    </li>
+</ul>
+</div>

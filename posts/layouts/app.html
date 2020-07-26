@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/app.css">
+
+        <base href="/">
+    </head>
+    <body ng-app='app' ng-controller='ApplicationCtrl'>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">Posty</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/register">Rejestracja</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Logowanie</a>
+                  </li>
+                </ul>
+                <span class="navbar-text" ng-if="currentUser">
+                  Zalogowany jako: {{ currentUser.username}}
+                </span>
+                <a class="nav-link" href="/" ng-click="logOut()"  ng-if="currentUser">Wyloguj</a>
+              </div>
+
+        </nav>
+
+        <div ng-view></div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.js"></script>
+        <script src="app.js"></script>
+
+    </body>
+</html>
